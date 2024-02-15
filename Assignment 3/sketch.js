@@ -2,7 +2,7 @@ let sprite;
 
 function preload() {
   sprite = new Sprite(200,200,80,80);
-  sprite.spriteSheet= 'assests/ninja.png';
+  sprite.spriteSheet= 'assets/ninja.png';
   let animations= {
     stand: {row: 0, frames: 1},
     walkRight: {row:0, col: 1, frames: 8},
@@ -36,13 +36,17 @@ function draw() {
 
   if (sprite.x + sprite.width/4 > width) {
     walkLeft();
-  } else if (sprite.x -sprite.width/4 < 0) {
+  } else if (sprite.x - sprite.width/4 < 0) {
     walkRight();
+  } else if (sprite.y + sprite.height/2.5 > height) {
+    walkUp();
+  } else if (sprite.y - sprite.height/2.5 < 0) {
+    walkDown();
   }
 }
 
 function stop() {
-  sprite.vel.y = 0;
+  sprite.vel.x = 0;
   sprite.vel.y = 0;
   sprite.changeAni('stand');
 }
