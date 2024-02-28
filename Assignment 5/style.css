@@ -1,0 +1,21 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#sampler {
+  text-align: center;
+}
+
+.sample-button {
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input {
+  margin-top: 10px;
+}
