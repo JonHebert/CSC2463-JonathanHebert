@@ -45,8 +45,8 @@ function createSampleButton(label, sample, x, y) {
   button.mousePressed(() => playSample(sample));
 }
 function playSample(sample) {
-  Tone.start();
-  sampler.player(sample).start();
+  Tone.start().then(() => {;
+  sampler.player(sample).start();});
 }
 
 function updateReverb(value) {
